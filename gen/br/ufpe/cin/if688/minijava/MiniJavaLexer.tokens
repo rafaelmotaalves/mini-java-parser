@@ -1,0 +1,11 @@
+MiniJava=1
+MainClass=2
+Identifier=3
+CLASS=4
+OPEN_BLOCK=5
+CLOSE_BLOCK=6
+WS=7
+'ID'=3
+'class'=4
+'}'=5
+'{'=6
