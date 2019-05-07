@@ -56,34 +56,97 @@ methodDeclaration
     OPEN_BLOCK
         varDeclaration*
         statement*
-        RETURN expression SEMICOLON
+        RETURN (expression | IDENTIFIER) SEMICOLON
     CLOSE_BLOCK
     ;
 
 statement
     : statement_block |
       assignment |
-      array_assignment
+      array_assignment |
+      print |
+      if_statement |
+      while_statement
     ;
 
 statement_block
     : OPEN_BLOCK statement* CLOSE_BLOCK
     ;
 
+if_statement
+    : IF OPEN_PARENTESIS (expression | IDENTIFIER) CLOSE_PARENTESIS statement ELSE statement
+    ;
+
+while_statement
+    : WHILE OPEN_PARENTESIS (expression | IDENTIFIER) CLOSE_PARENTESIS statement
+    ;
+
 assignment
-    : IDENTIFIER EQUALS expression
+    : IDENTIFIER EQUALS (expression | IDENTIFIER)
     ;
 
 print
-    : SISOUT OPEN_PARENTESIS expression CLOSE_PARENTESIS
+    : SISOUT OPEN_PARENTESIS (expression | IDENTIFIER) CLOSE_PARENTESIS
     ;
 
 array_assignment
-    : IDENTIFIER OPEN_BRACKET expression CLOSE_BRACKET EQUALS expression
+    : IDENTIFIER OPEN_BRACKET (expression | IDENTIFIER) CLOSE_BRACKET EQUALS (expression | IDENTIFIER)
     ;
 
 expression
-    : 'expression'
+    : TRUE | FALSE | INTEGER | THIS
+      OPEN_PARENTESIS (expression | IDENTIFIER) CLOSE_PARENTESIS |
+      not_expression |
+      object_instatiation |
+      array_instatiation |
+    ;
+
+not_expression
+    : NOT (expression | IDENTIFIER)
+    ;
+
+object_instatiation
+    : NEW IDENTIFIER OPEN_PARENTESIS CLOSE_PARENTESIS
+    ;
+
+array_instatiation
+    : NEW INT OPEN_BRACKET (expression | IDENTIFIER) CLOSE_BRACKET
+    ;
+
+NOT
+ : '!'
+ ;
+
+NEW
+    : 'new'
+    ;
+
+INTEGER
+    : ('0' .. '9')+
+    ;
+
+THIS
+    : 'this'
+    ;
+
+TRUE
+    : 'true'
+    ;
+
+FALSE
+    : 'false'
+    ;
+
+WHILE
+    : 'while'
+    ;
+
+IF
+    : 'if'
+    ;
+
+ELSE
+    : 'else'
     ;
 
 SISOUT
