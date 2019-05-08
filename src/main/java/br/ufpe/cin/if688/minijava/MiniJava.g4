@@ -29,88 +29,190 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 grammar MiniJava;
 
 goal
-   : mainClass
+   : mainClass classDeclaration*
     ;
 
 mainClass
-    : CLASS IDENTIFIER OPEN_BLOCK
-        PUBLIC STATIC VOID MAIN OPEN_PARENTESIS STRING OPEN_BRACKET CLOSE_BRACKET IDENTIFIER CLOSE_PARENTESIS
+    : CLASS identifier OPEN_BLOCK
+        PUBLIC STATIC VOID MAIN OPEN_PARENTESIS STRING OPEN_BRACKET CLOSE_BRACKET identifier CLOSE_PARENTESIS
         OPEN_BLOCK statement CLOSE_BLOCK
      CLOSE_BLOCK
     ;
 
 classDeclaration
     :
-        CLASS IDENTIFIER (EXTENDS IDENTIFIER)? OPEN_BLOCK
+        CLASS identifier (EXTENDS identifier)? OPEN_BLOCK
             varDeclaration*
             methodDeclaration*
         CLOSE_BLOCK
     ;
 
 varDeclaration
-    : (IDENTIFIER | TYPE) IDENTIFIER SEMICOLON
+    : type identifier SEMICOLON
     ;
 
 methodDeclaration
-    : PUBLIC (TYPE | IDENTIFIER) IDENTIFIER OPEN_PARENTESIS ((TYPE | IDENTIFIER) IDENTIFIER (COMMA (TYPE | IDENTIFIER) IDENTIFIER)* )? CLOSE_PARENTESIS
+    : PUBLIC type identifier OPEN_PARENTESIS (parameterList)? CLOSE_PARENTESIS
     OPEN_BLOCK
         varDeclaration*
         statement*
-        RETURN (expression | IDENTIFIER) SEMICOLON
+        RETURN expression SEMICOLON
     CLOSE_BLOCK
     ;
 
-statement
-    : statement_block |
-      assignment |
-      array_assignment |
-      print |
-      if_statement |
-      while_statement
+parameterList:
+        type identifier (COMMA type identifier)*
     ;
 
-statement_block
+statement
+    : statementBlock |
+      assignment |
+      arrayAssignment |
+      print |
+      ifStatement |
+      whileStatement
+    ;
+
+statementBlock
     : OPEN_BLOCK statement* CLOSE_BLOCK
     ;
 
-if_statement
-    : IF OPEN_PARENTESIS (expression | IDENTIFIER) CLOSE_PARENTESIS statement ELSE statement
+ifStatement
+    : IF OPEN_PARENTESIS expression CLOSE_PARENTESIS statement ELSE statement
     ;
 
-while_statement
-    : WHILE OPEN_PARENTESIS (expression | IDENTIFIER) CLOSE_PARENTESIS statement
+whileStatement
+    : WHILE OPEN_PARENTESIS expression CLOSE_PARENTESIS statement
     ;
 
 assignment
-    : IDENTIFIER EQUALS (expression | IDENTIFIER)
+    : identifier EQUALS expression SEMICOLON
     ;
 
 print
-    : SISOUT OPEN_PARENTESIS (expression | IDENTIFIER) CLOSE_PARENTESIS
+    : SISOUT OPEN_PARENTESIS expression CLOSE_PARENTESIS
     ;
 
-array_assignment
-    : IDENTIFIER OPEN_BRACKET (expression | IDENTIFIER) CLOSE_BRACKET EQUALS (expression | IDENTIFIER)
+arrayAssignment
+    : identifier OPEN_BRACKET expression CLOSE_BRACKET EQUALS expression SEMICOLON
     ;
 
-expression
-    : TRUE | FALSE | INTEGER | THIS
-      OPEN_PARENTESIS (expression | IDENTIFIER) CLOSE_PARENTESIS |
-      not_expression |
-      object_instatiation |
-      array_instatiation |
+expression:
+    expressionLeft (expressionRight)* |
+    parentesis
+   ;
+
+expressionLeft
+    : TRUE
+      | FALSE
+      | INTEGER | THIS
+      notExpression |
+      objectInstatiation |
+      arrayInstatiation |
+      identifier |
+      parentesis
     ;
 
-not_expression
-    : NOT (expression | IDENTIFIER)
+parentesis
+    :
+    OPEN_PARENTESIS (expressionLeft | expression) CLOSE_PARENTESIS
     ;
 
-object_instatiation
-    : NEW IDENTIFIER OPEN_PARENTESIS CLOSE_PARENTESIS
+expressionRight
+    :
+    arrayLength |
+    arrayLookup |
+    plus |
+    minus |
+    times |
+    lessThan |
+    and |
+    methodCall
     ;
 
-array_instatiation
-    : NEW INT OPEN_BRACKET (expression | IDENTIFIER) CLOSE_BRACKET
+methodCall
+    : DOT identifier OPEN_PARENTESIS ( parameterListCall )? CLOSE_PARENTESIS
+    ;
+
+parameterListCall
+    :
+    expression ( COMMA expression )*
+    ;
+
+and
+    :AND expression
+    ;
+
+plus
+    : PLUS expression
+    ;
+
+minus
+    : MINUS expression
+    ;
+
+times
+    : TIMES expression
+    ;
+
+lessThan
+    :LESS_THAN expression
+    ;
+
+arrayLength
+    : DOT LENGTH
+    ;
+
+arrayLookup
+    : OPEN_BRACKET expression CLOSE_BRACKET
+    ;
+
+notExpression
+    : NOT expression
+    ;
+
+objectInstatiation
+    : NEW identifier OPEN_PARENTESIS CLOSE_PARENTESIS
+    ;
+
+arrayInstatiation
+    : NEW INT OPEN_BRACKET expression CLOSE_BRACKET
+    ;
+
+identifier
+    : IDENTIFIER
+    ;
+
+type
+    : INT | INT_ARRAY  | BOOLEAN | identifier
+    ;
+
+LENGTH
+    : 'length'
+    ;
+
+DOT :
+        '.'
+    ;
+
+AND
+    : '&&'
+    ;
+
+LESS_THAN
+    : '<'
+    ;
+
+PLUS
+    : '+'
+    ;
+
+MINUS
+    : '-'
+    ;
+
+TIMES
+    : '*'
     ;
 
 NOT
@@ -151,10 +253,6 @@ ELSE
 
 SISOUT
     : 'System.out.println'
-    ;
-
-TYPE
-    : INT | INT_ARRAY  | BOOLEAN
     ;
 
 EQUALS
@@ -239,7 +337,6 @@ STRING
 IDENTIFIER
    : VALID_ID_START(VALID_ID_CHAR)*
    ;
-
 
 VALID_ID_START
    : ('a' .. 'z') | ('A' .. 'Z') | '_'
