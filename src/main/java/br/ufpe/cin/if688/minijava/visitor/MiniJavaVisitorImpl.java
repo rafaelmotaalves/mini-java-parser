@@ -6,181 +6,182 @@ import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.RuleNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
+import br.ufpe.cin.if688.minijava.ast.*;
 
-public class MiniJavaVisitorImpl<T> implements MiniJavaVisitor<T> {
+public class MiniJavaVisitorImpl implements MiniJavaVisitor<Program> {
 
     @Override
-    public T visit(ParseTree parseTree) {
+    public Program visit(ParseTree parseTree) {
         return null;
     }
 
     @Override
-    public T visitChildren(RuleNode ruleNode) {
+    public Program visitChildren(RuleNode ruleNode) {
         return null;
     }
 
     @Override
-    public T visitErrorNode(ErrorNode errorNode) {
+    public Program visitErrorNode(ErrorNode errorNode) {
         return null;
     }
 
     @Override
-    public T visitTerminal(TerminalNode terminalNode) {
+    public Program visitTerminal(TerminalNode terminalNode) {
         return null;
     }
 
     @Override
-    public T visitAnd(MiniJavaParser.AndContext ctx) {
+    public Program visitAnd(MiniJavaParser.AndContext ctx) {
         return null;
     }
 
     @Override
-    public T visitArrayAssignment(MiniJavaParser.ArrayAssignmentContext ctx) {
+    public Program visitArrayAssignment(MiniJavaParser.ArrayAssignmentContext ctx) {
         return null;
     }
 
     @Override
-    public T visitArrayInstatiation(MiniJavaParser.ArrayInstatiationContext ctx) {
+    public Program visitArrayInstatiation(MiniJavaParser.ArrayInstatiationContext ctx) {
         return null;
     }
 
     @Override
-    public T visitArrayLength(MiniJavaParser.ArrayLengthContext ctx) {
+    public Program visitArrayLength(MiniJavaParser.ArrayLengthContext ctx) {
         return null;
     }
 
     @Override
-    public T visitArrayLookup(MiniJavaParser.ArrayLookupContext ctx) {
+    public Program visitArrayLookup(MiniJavaParser.ArrayLookupContext ctx) {
         return null;
     }
 
     @Override
-    public T visitAssignment(MiniJavaParser.AssignmentContext ctx) {
+    public Program visitAssignment(MiniJavaParser.AssignmentContext ctx) {
         return null;
     }
 
     @Override
-    public T visitClassDeclaration(MiniJavaParser.ClassDeclarationContext ctx) {
+    public Program visitClassDeclaration(MiniJavaParser.ClassDeclarationContext ctx) {
         return null;
     }
 
     @Override
-    public T visitExpression(MiniJavaParser.ExpressionContext ctx) {
+    public Program visitExpression(MiniJavaParser.ExpressionContext ctx) {
         return null;
     }
 
     @Override
-    public T visitExpressionLeft(MiniJavaParser.ExpressionLeftContext ctx) {
+    public Program visitExpressionLeft(MiniJavaParser.ExpressionLeftContext ctx) {
         return null;
     }
 
     @Override
-    public T visitExpressionRight(MiniJavaParser.ExpressionRightContext ctx) {
+    public Program visitExpressionRight(MiniJavaParser.ExpressionRightContext ctx) {
         return null;
     }
 
     @Override
-    public T visitGoal(MiniJavaParser.GoalContext ctx) {
+    public Program visitGoal(MiniJavaParser.GoalContext ctx) {
         return null;
     }
 
     @Override
-    public T visitIdentifier(MiniJavaParser.IdentifierContext ctx) {
+    public Program visitIdentifier(MiniJavaParser.IdentifierContext ctx) {
         return null;
     }
 
     @Override
-    public T visitIfStatement(MiniJavaParser.IfStatementContext ctx) {
+    public Program visitIfStatement(MiniJavaParser.IfStatementContext ctx) {
         return null;
     }
 
     @Override
-    public T visitLessThan(MiniJavaParser.LessThanContext ctx) {
+    public Program visitLessThan(MiniJavaParser.LessThanContext ctx) {
         return null;
     }
 
     @Override
-    public T visitMainClass(MiniJavaParser.MainClassContext ctx) {
+    public Program visitMainClass(MiniJavaParser.MainClassContext ctx) {
         return null;
     }
 
     @Override
-    public T visitMethodCall(MiniJavaParser.MethodCallContext ctx) {
+    public Program visitMethodCall(MiniJavaParser.MethodCallContext ctx) {
         return null;
     }
 
     @Override
-    public T visitMethodDeclaration(MiniJavaParser.MethodDeclarationContext ctx) {
+    public Program visitMethodDeclaration(MiniJavaParser.MethodDeclarationContext ctx) {
         return null;
     }
 
     @Override
-    public T visitMinus(MiniJavaParser.MinusContext ctx) {
+    public Program visitMinus(MiniJavaParser.MinusContext ctx) {
         return null;
     }
 
     @Override
-    public T visitNotExpression(MiniJavaParser.NotExpressionContext ctx) {
+    public Program visitNotExpression(MiniJavaParser.NotExpressionContext ctx) {
         return null;
     }
 
     @Override
-    public T visitObjectInstatiation(MiniJavaParser.ObjectInstatiationContext ctx) {
+    public Program visitObjectInstatiation(MiniJavaParser.ObjectInstatiationContext ctx) {
         return null;
     }
 
     @Override
-    public T visitParameterList(MiniJavaParser.ParameterListContext ctx) {
+    public Program visitParameterList(MiniJavaParser.ParameterListContext ctx) {
         return null;
     }
 
     @Override
-    public T visitParameterListCall(MiniJavaParser.ParameterListCallContext ctx) {
+    public Program visitParameterListCall(MiniJavaParser.ParameterListCallContext ctx) {
         return null;
     }
 
     @Override
-    public T visitParentesis(MiniJavaParser.ParentesisContext ctx) {
+    public Program visitParentesis(MiniJavaParser.ParentesisContext ctx) {
         return null;
     }
 
     @Override
-    public T visitPlus(MiniJavaParser.PlusContext ctx) {
+    public Program visitPlus(MiniJavaParser.PlusContext ctx) {
         return null;
     }
 
     @Override
-    public T visitPrint(MiniJavaParser.PrintContext ctx) {
+    public Program visitPrint(MiniJavaParser.PrintContext ctx) {
         return null;
     }
 
     @Override
-    public T visitStatement(MiniJavaParser.StatementContext ctx) {
+    public Program visitStatement(MiniJavaParser.StatementContext ctx) {
         return null;
     }
 
     @Override
-    public T visitStatementBlock(MiniJavaParser.StatementBlockContext ctx) {
+    public Program visitStatementBlock(MiniJavaParser.StatementBlockContext ctx) {
         return null;
     }
 
     @Override
-    public T visitTimes(MiniJavaParser.TimesContext ctx) {
+    public Program visitTimes(MiniJavaParser.TimesContext ctx) {
         return null;
     }
 
     @Override
-    public T visitType(MiniJavaParser.TypeContext ctx) {
+    public Program visitType(MiniJavaParser.TypeContext ctx) {
         return null;
     }
 
     @Override
-    public T visitVarDeclaration(MiniJavaParser.VarDeclarationContext ctx) {
+    public Program visitVarDeclaration(MiniJavaParser.VarDeclarationContext ctx) {
         return null;
     }
 
     @Override
-    public T visitWhileStatement(MiniJavaParser.WhileStatementContext ctx) {
+    public Program visitWhileStatement(MiniJavaParser.WhileStatementContext ctx) {
         return null;
     }
 }
