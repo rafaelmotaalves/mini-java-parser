@@ -1,3 +1,5 @@
+package br.ufpe.cin.if688.minijava.ANTLR;
+
 // Generated from /home/rafaelmota/mini-java-parser/src/main/java/br/ufpe/cin/if688/minijava/MiniJava.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
