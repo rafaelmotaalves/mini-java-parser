@@ -89,6 +89,7 @@ assignment
     : identifier EQUALS expression SEMICOLON
     ;
 
+// TODO: Adicionar ponto de virgula
 print
     : SISOUT OPEN_PARENTESIS expression CLOSE_PARENTESIS
     ;

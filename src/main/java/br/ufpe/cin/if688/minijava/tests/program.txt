@@ -1,0 +1,11 @@
+class Test {
+    public static void main (String[] args) {
+        System.out.println(true)
+    }
+}
+class A extends B {
+    int v1;
+    boolean v2;
+    int[] v3;
+    Test v4;
+}
