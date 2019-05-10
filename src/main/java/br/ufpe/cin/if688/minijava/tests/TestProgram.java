@@ -4,7 +4,6 @@ import br.ufpe.cin.if688.minijava.ANTLR.MiniJavaLexer;
 import br.ufpe.cin.if688.minijava.ANTLR.MiniJavaParser;
 import br.ufpe.cin.if688.minijava.ast.Program;
 import br.ufpe.cin.if688.minijava.visitor.MiniJavaVisitorImpl;
-import br.ufpe.cin.if688.minijava.visitor.PrettyPrintVisitor;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;

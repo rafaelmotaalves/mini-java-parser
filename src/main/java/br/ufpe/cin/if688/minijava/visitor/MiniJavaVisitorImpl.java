@@ -1,20 +1,23 @@
 package br.ufpe.cin.if688.minijava.visitor;
 
-import br.ufpe.cin.if688.minijava.ANTLR.MiniJavaParser;
 import br.ufpe.cin.if688.minijava.ANTLR.MiniJavaVisitor;
-import jdk.nashorn.internal.ir.Assignment;
+import br.ufpe.cin.if688.minijava.ast.*;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.RuleNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
-import br.ufpe.cin.if688.minijava.ast.*;
+import br.ufpe.cin.if688.minijava.ANTLR.MiniJavaParser;
 
+import javax.swing.plaf.nimbus.State;
 import java.beans.Expression;
+
+import static java.lang.Integer.parseInt;
 
 public class MiniJavaVisitorImpl implements MiniJavaVisitor<Program> {
 
 
     private Program currentProgram;
+    private MainClass currentMain;
     private ClassDecl currentClass;
     private Identifier currentIdentifier;
     private String currentSymbol;
@@ -22,6 +25,7 @@ public class MiniJavaVisitorImpl implements MiniJavaVisitor<Program> {
     private MethodDecl currentMethod;
     private Exp currentExp;
     private Statement currentStatement;
+    private ExpList currentExpList;
 
     @Override
     public Program visit(ParseTree parseTree) {
@@ -50,15 +54,32 @@ public class MiniJavaVisitorImpl implements MiniJavaVisitor<Program> {
 
     @Override
     public Program visitGoal(MiniJavaParser.GoalContext ctx) {
+        ctx.mainClass().accept(this);
+        MainClass mainClass = currentMain;
+
         ClassDeclList classDeclarationList = new ClassDeclList();
-        currentProgram = new Program(null,  classDeclarationList);
+
+        currentProgram = new Program(currentMain,  classDeclarationList);
 
         for (MiniJavaParser.ClassDeclarationContext classDeclarationCtx : ctx.classDeclaration()) {
             classDeclarationCtx.accept(this);
         }
 
-        ctx.mainClass().accept(this);
+        return currentProgram;
+    }
 
+    @Override
+    public Program visitMainClass(MiniJavaParser.MainClassContext ctx) {
+        ctx.identifier(0).accept(this);
+        Identifier className = currentIdentifier;
+
+        ctx.identifier(1).accept(this);
+        Identifier args = currentIdentifier;
+
+        ctx.statement().accept(this);
+        Statement mainStatement = currentStatement;
+
+        currentMain = new MainClass(className, args, mainStatement);
         return currentProgram;
     }
 
@@ -204,11 +225,82 @@ public class MiniJavaVisitorImpl implements MiniJavaVisitor<Program> {
 
     @Override
     public Program visitExpression(MiniJavaParser.ExpressionContext ctx) {
-        // TODO: Remover Mock
-        currentExp = new True();
+        MiniJavaParser.NotExpressionContext notExpression = ctx.notExpression();
+        MiniJavaParser.ObjectInstatiationContext objInstatiation = ctx.objectInstatiation();
+        MiniJavaParser.ArrayInstatiationContext arrayInstatiation = ctx.arrayInstatiation();
+        MiniJavaParser.ParentesisContext parentesisContext = ctx.parentesis();
+
+        if (ctx.TRUE() != null) {
+            currentExp = new True();
+        } else if (ctx.FALSE() != null) {
+            currentExp = new False();
+        } else if (ctx.THIS() != null) {
+            currentExp = new This();
+        } else if (ctx.INTEGER() != null) {
+            ctx.INTEGER().accept(this);
+            currentExp = new IntegerLiteral(parseInt(currentSymbol));
+        } else if (ctx.identifier() != null && ctx.DOT() == null) {
+            ctx.identifier().accept(this);
+            currentExp = new IdentifierExp(currentIdentifier.toString());
+        } else if (notExpression != null) {
+            notExpression.accept(this);
+        } else if (objInstatiation != null) {
+            objInstatiation.accept(this);
+        } else if (arrayInstatiation != null) {
+            arrayInstatiation.accept(this);
+        } else if (parentesisContext != null) {
+            parentesisContext.accept(this);
+        } else if (ctx.LENGTH() != null) {
+            // array length
+            ctx.expression(0).accept(this);
+
+            currentExp = new ArrayLength(currentExp);
+        } else if (ctx.OPEN_BRACKET() != null && ctx.CLOSE_BRACKET() != null) {
+            // array lookup
+            ctx.expression(0).accept(this);
+            Exp array = currentExp;
+            ctx.expression(1).accept(this);
+            Exp index = currentExp;
+
+            currentExp = new ArrayLookup(array, index);
+        } else if (ctx.OPEN_PARENTESIS() !=  null && ctx.CLOSE_PARENTESIS() != null) {
+            // method call
+
+            ctx.expression(0).accept(this);
+            Exp leftExp = currentExp;
+
+            ctx.identifier().accept(this);
+            Identifier methodName = currentIdentifier;
+
+            ctx.parameterListCall().accept(this);
+
+            currentExp = new Call(leftExp, methodName, currentExpList);
+        } else {
+            // operation
+
+            ctx.expression(0).accept(this);
+            Exp left = currentExp;
+
+            ctx.expression(1).accept(this);
+            Exp right = currentExp;
+
+            if (ctx.PLUS() != null) {
+                currentExp = new Plus(left, right);
+            } else if (ctx.MINUS() != null) {
+                currentExp = new Minus(left, right);
+            } else if (ctx.TIMES() != null) {
+                currentExp = new Times(left, right);
+            } else if (ctx.LESS_THAN() != null) {
+                currentExp = new LessThan(left, right);
+            } else if (ctx.AND() != null) {
+                currentExp = new And(left, right);
+            }
+        }
 
         return currentProgram;
     }
+
+
 
     @Override
     public Program visitStatement(MiniJavaParser.StatementContext ctx) {
@@ -229,6 +321,60 @@ public class MiniJavaVisitorImpl implements MiniJavaVisitor<Program> {
         return currentProgram;
     }
 
+    @Override
+    public Program visitNotExpression(MiniJavaParser.NotExpressionContext ctx) {
+        ctx.expression().accept(this);
+
+        currentExp = new Not(currentExp);
+        return currentProgram;
+    }
+
+
+    @Override
+    public Program visitObjectInstatiation(MiniJavaParser.ObjectInstatiationContext ctx) {
+        ctx.identifier().accept(this);
+        Identifier objClass = currentIdentifier;
+
+        currentExp = new NewObject(objClass);
+
+        return currentProgram;
+    }
+
+
+    @Override
+    public Program visitArrayInstatiation(MiniJavaParser.ArrayInstatiationContext ctx) {
+        ctx.expression().accept(this);
+        Exp index = currentExp;
+
+        currentExp = new NewArray(index);
+
+        return currentProgram;
+    }
+
+    @Override
+    public Program visitParentesis(MiniJavaParser.ParentesisContext ctx) {
+        ctx.expression().accept(this);
+
+        return currentProgram;
+    }
+
+    @Override
+    public Program visitParameterListCall(MiniJavaParser.ParameterListCallContext ctx) {
+        ExpList parameterList = new ExpList();
+
+
+        for (MiniJavaParser.ExpressionContext parameterCtx : ctx.expression()) {
+            parameterCtx.accept(this);
+
+            parameterList.addElement(currentExp);
+        }
+
+        currentExpList = parameterList;
+
+        return currentProgram;
+    }
+
+
 
     @Override
     public Program visitAssignment(MiniJavaParser.AssignmentContext ctx) {
@@ -236,115 +382,85 @@ public class MiniJavaVisitorImpl implements MiniJavaVisitor<Program> {
         Identifier variableIdentifier = currentIdentifier;
 
         ctx.expression().accept(this);
-        Exp assigmentExp = currentExp;
+        Exp assignmentExp = currentExp;
 
 
-        Assignment assignment = new Assignment(variableIdentifier, assigmentExp);
-        currentStatement =
+        Assign assignment = new Assign(variableIdentifier, assignmentExp);
+        currentStatement = assignment;
+
+        return currentProgram;
     }
 
-    @Override
-    public Program visitAnd(MiniJavaParser.AndContext ctx) {
-        return null;
-    }
 
     @Override
     public Program visitArrayAssignment(MiniJavaParser.ArrayAssignmentContext ctx) {
-        return null;
+        ctx.identifier().accept(this);
+        Identifier arrayName = currentIdentifier;
+
+        ctx.expression(0).accept(this);
+        Exp index = currentExp;
+
+        ctx.expression(1).accept(this);
+        Exp value = currentExp;
+
+        currentStatement = new ArrayAssign(arrayName, index, value);
+
+        return currentProgram;
     }
 
-    @Override
-    public Program visitArrayInstatiation(MiniJavaParser.ArrayInstatiationContext ctx) {
-        return null;
-    }
-
-    @Override
-    public Program visitArrayLength(MiniJavaParser.ArrayLengthContext ctx) {
-        return null;
-    }
-
-    @Override
-    public Program visitArrayLookup(MiniJavaParser.ArrayLookupContext ctx) {
-        return null;
-    }
-
-    @Override
-    public Program visitExpressionLeft(MiniJavaParser.ExpressionLeftContext ctx) {
-        return null;
-    }
-
-    @Override
-    public Program visitExpressionRight(MiniJavaParser.ExpressionRightContext ctx) {
-        return null;
-    }
 
     @Override
     public Program visitIfStatement(MiniJavaParser.IfStatementContext ctx) {
-        return null;
+        ctx.expression().accept(this);
+        Exp condition =  currentExp;
+
+        ctx.statement(0).accept(this);
+        Statement mainStm = currentStatement;
+
+        ctx.statement(1).accept(this);
+        Statement elseStm = currentStatement;
+
+        currentStatement = new If(condition, mainStm, elseStm);
+
+        return currentProgram;
     }
 
-    @Override
-    public Program visitLessThan(MiniJavaParser.LessThanContext ctx) {
-        return null;
-    }
-
-    @Override
-    public Program visitMainClass(MiniJavaParser.MainClassContext ctx) {
-        return null;
-    }
-
-    @Override
-    public Program visitMethodCall(MiniJavaParser.MethodCallContext ctx) {
-        return null;
-    }
-
-    @Override
-    public Program visitMinus(MiniJavaParser.MinusContext ctx) {
-        return null;
-    }
-
-    @Override
-    public Program visitNotExpression(MiniJavaParser.NotExpressionContext ctx) {
-        return null;
-    }
-
-    @Override
-    public Program visitObjectInstatiation(MiniJavaParser.ObjectInstatiationContext ctx) {
-        return null;
-    }
-
-    @Override
-    public Program visitParameterListCall(MiniJavaParser.ParameterListCallContext ctx) {
-        return null;
-    }
-
-    @Override
-    public Program visitParentesis(MiniJavaParser.ParentesisContext ctx) {
-        return null;
-    }
-
-    @Override
-    public Program visitPlus(MiniJavaParser.PlusContext ctx) {
-        return null;
-    }
 
     @Override
     public Program visitPrint(MiniJavaParser.PrintContext ctx) {
-        return null;
+        ctx.expression().accept(this);
+        Exp value = currentExp;
+
+        currentStatement = new Print(value);
+
+        return currentProgram;
     }
 
     @Override
     public Program visitStatementBlock(MiniJavaParser.StatementBlockContext ctx) {
-        return null;
-    }
+        StatementList stmList = new StatementList();
 
-    @Override
-    public Program visitTimes(MiniJavaParser.TimesContext ctx) {
-        return null;
+        for (MiniJavaParser.StatementContext stmCtx : ctx.statement()) {
+            stmCtx.accept(this);
+            stmList.addElement(currentStatement);
+        }
+
+
+        currentStatement = new Block(stmList);
+
+        return currentProgram;
     }
 
     @Override
     public Program visitWhileStatement(MiniJavaParser.WhileStatementContext ctx) {
-        return null;
+        ctx.expression().accept(this);
+        Exp condition = currentExp;
+
+        ctx.statement().accept(this);
+        Statement code = currentStatement;
+
+        currentStatement = new While(condition, code);
+
+        return currentProgram;
     }
 }

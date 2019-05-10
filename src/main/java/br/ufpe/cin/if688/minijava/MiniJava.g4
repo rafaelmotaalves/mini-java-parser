@@ -89,83 +89,35 @@ assignment
     : identifier EQUALS expression SEMICOLON
     ;
 
-// TODO: Adicionar ponto de virgula
 print
-    : SISOUT OPEN_PARENTESIS expression CLOSE_PARENTESIS
+    : SISOUT OPEN_PARENTESIS expression CLOSE_PARENTESIS SEMICOLON
     ;
 
 arrayAssignment
     : identifier OPEN_BRACKET expression CLOSE_BRACKET EQUALS expression SEMICOLON
     ;
 
-expression:
-    expressionLeft (expressionRight)* |
-    parentesis
-   ;
-
-expressionLeft
-    : TRUE
-      | FALSE
-      | INTEGER | THIS
+expression
+    : TRUE | FALSE | INTEGER | THIS
       notExpression |
       objectInstatiation |
       arrayInstatiation |
       identifier |
-      parentesis
+      parentesis |
+      expression DOT identifier OPEN_PARENTESIS ( parameterListCall )? CLOSE_PARENTESIS |
+      expression  (AND | PLUS | MINUS | TIMES | LESS_THAN) expression |
+      expression DOT LENGTH |
+      expression OPEN_BRACKET expression CLOSE_BRACKET
     ;
 
 parentesis
     :
-    OPEN_PARENTESIS (expressionLeft | expression) CLOSE_PARENTESIS
-    ;
-
-expressionRight
-    :
-    arrayLength |
-    arrayLookup |
-    plus |
-    minus |
-    times |
-    lessThan |
-    and |
-    methodCall
-    ;
-
-methodCall
-    : DOT identifier OPEN_PARENTESIS ( parameterListCall )? CLOSE_PARENTESIS
+    OPEN_PARENTESIS expression CLOSE_PARENTESIS
     ;
 
 parameterListCall
     :
     expression ( COMMA expression )*
-    ;
-
-and
-    :AND expression
-    ;
-
-plus
-    : PLUS expression
-    ;
-
-minus
-    : MINUS expression
-    ;
-
-times
-    : TIMES expression
-    ;
-
-lessThan
-    :LESS_THAN expression
-    ;
-
-arrayLength
-    : DOT LENGTH
-    ;
-
-arrayLookup
-    : OPEN_BRACKET expression CLOSE_BRACKET
     ;
 
 notExpression
