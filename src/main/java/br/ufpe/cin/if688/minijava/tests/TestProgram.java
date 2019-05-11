@@ -4,6 +4,7 @@ import br.ufpe.cin.if688.minijava.ANTLR.MiniJavaLexer;
 import br.ufpe.cin.if688.minijava.ANTLR.MiniJavaParser;
 import br.ufpe.cin.if688.minijava.ast.Program;
 import br.ufpe.cin.if688.minijava.visitor.MiniJavaVisitorImpl;
+import br.ufpe.cin.if688.minijava.visitor.PrettyPrintVisitor;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -13,7 +14,8 @@ import java.io.IOException;
 public class TestProgram {
 
     public static void main(String[] args) throws IOException {
-        CharStream charStream = CharStreams.fromFileName("D:\\Users\\rma7\\Documents\\mini-java-parser\\src\\main\\java\\br\\ufpe\\cin\\if688\\minijava\\tests\\program.txt");
+        String filePath = "/home/rafaelmota/mini-java-parser/src/main/java/br/ufpe/cin/if688/minijava/tests/program.txt";
+        CharStream charStream = CharStreams.fromFileName(filePath);
         MiniJavaLexer lexer = new MiniJavaLexer(charStream);
 
         CommonTokenStream commonTokenStream = new CommonTokenStream(lexer);
@@ -22,8 +24,7 @@ public class TestProgram {
         MiniJavaVisitorImpl miniJava = new MiniJavaVisitorImpl();
         Program program = miniJava.visit(parser.goal());
 
-//        PrettyPrintVisitor printVisitor = new PrettyPrintVisitor();
-//        printVisitor.visit(program);
-
+        PrettyPrintVisitor printVisitor = new PrettyPrintVisitor();
+        printVisitor.visit(program);
     }
 }

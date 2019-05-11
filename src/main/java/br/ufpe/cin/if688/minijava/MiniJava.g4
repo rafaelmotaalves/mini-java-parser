@@ -98,7 +98,7 @@ arrayAssignment
     ;
 
 expression
-    : TRUE | FALSE | INTEGER | THIS
+    : TRUE | FALSE | INTEGER | THIS |
       notExpression |
       objectInstatiation |
       arrayInstatiation |
@@ -299,6 +299,20 @@ VALID_ID_START
  VALID_ID_CHAR
    : ('a' .. 'z') | ('A' .. 'Z') | '_' | ('0' .. '9')
    ;
+
+
+SLASH:
+    '/'
+    ;
+
+COMMENT:
+    SLASH SLASH ~[\r\n]* -> skip
+;
+
+MULTI_LINE_COMMENT:
+    '/*' .* '*/' -> skip
+;
+
 
 WS
    : [ \t\r\n] -> skip

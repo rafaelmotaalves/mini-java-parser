@@ -8,9 +8,6 @@ import org.antlr.v4.runtime.tree.RuleNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import br.ufpe.cin.if688.minijava.ANTLR.MiniJavaParser;
 
-import javax.swing.plaf.nimbus.State;
-import java.beans.Expression;
-
 import static java.lang.Integer.parseInt;
 
 public class MiniJavaVisitorImpl implements MiniJavaVisitor<Program> {
@@ -26,6 +23,7 @@ public class MiniJavaVisitorImpl implements MiniJavaVisitor<Program> {
     private Exp currentExp;
     private Statement currentStatement;
     private ExpList currentExpList;
+    private VarDecl currentVarDeclaration;
 
     @Override
     public Program visit(ParseTree parseTree) {
@@ -59,10 +57,11 @@ public class MiniJavaVisitorImpl implements MiniJavaVisitor<Program> {
 
         ClassDeclList classDeclarationList = new ClassDeclList();
 
-        currentProgram = new Program(currentMain,  classDeclarationList);
+        currentProgram = new Program(mainClass, classDeclarationList);
 
         for (MiniJavaParser.ClassDeclarationContext classDeclarationCtx : ctx.classDeclaration()) {
             classDeclarationCtx.accept(this);
+            classDeclarationList.addElement(currentClass);
         }
 
         return currentProgram;
@@ -106,13 +105,14 @@ public class MiniJavaVisitorImpl implements MiniJavaVisitor<Program> {
 
         for (MiniJavaParser.VarDeclarationContext varDeclarationContext : ctx.varDeclaration()) {
             varDeclarationContext.accept(this);
+            varDeclList.addElement(currentVarDeclaration);
         }
 
         for (MiniJavaParser.MethodDeclarationContext methodDeclarationCtx : ctx.methodDeclaration()) {
             methodDeclarationCtx.accept(this);
+            methodDeclList.addElement(currentMethod);
         }
 
-        currentClass = null;
         return currentProgram;
     }
 
@@ -139,13 +139,7 @@ public class MiniJavaVisitorImpl implements MiniJavaVisitor<Program> {
 
         VarDecl varDeclaration = new VarDecl(variableType, variableIdentifier);
 
-        if (currentMethod != null && currentMethod instanceof MethodDecl) {
-            currentMethod.vl.addElement(varDeclaration);
-        } else if (currentClass instanceof ClassDeclSimple) {
-            ((ClassDeclSimple) currentClass).vl.addElement(varDeclaration);
-        } else if (currentClass instanceof ClassDeclExtends) {
-            ((ClassDeclExtends) currentClass).vl.addElement(varDeclaration);
-        }
+        currentVarDeclaration = varDeclaration;
 
         return currentProgram;
     }
@@ -189,17 +183,19 @@ public class MiniJavaVisitorImpl implements MiniJavaVisitor<Program> {
                 returnExp
         );
 
-        ctx.parameterList().accept(this);
+        if (ctx.parameterList() != null) {
+            ctx.parameterList().accept(this);
+        }
 
         for (MiniJavaParser.VarDeclarationContext varDeclCtx : ctx.varDeclaration()) {
             varDeclCtx.accept(this);
+            varDeclList.addElement(currentVarDeclaration);
         }
 
         for (MiniJavaParser.StatementContext stmCtx : ctx.statement()) {
             stmCtx.accept(this);
+            statementList.addElement(currentStatement);
         }
-
-        currentMethod = null;
 
         return currentProgram;
     }
@@ -272,9 +268,14 @@ public class MiniJavaVisitorImpl implements MiniJavaVisitor<Program> {
             ctx.identifier().accept(this);
             Identifier methodName = currentIdentifier;
 
-            ctx.parameterListCall().accept(this);
+            if (ctx.parameterListCall() != null) {
+                ctx.parameterListCall().accept(this);
+            } else {
+                currentExpList = new ExpList();
+            }
 
             currentExp = new Call(leftExp, methodName, currentExpList);
+
         } else {
             // operation
 
@@ -312,9 +313,9 @@ public class MiniJavaVisitorImpl implements MiniJavaVisitor<Program> {
             ctx.ifStatement().accept(this);
         } else if (ctx.statementBlock() != null) {
             ctx.statementBlock().accept(this);
-        } else if (ctx.print().accept(this) != null) {
+        } else if (ctx.print() != null) {
             ctx.print().accept(this);
-        } else if (ctx.whileStatement().accept(this) != null) {
+        } else if (ctx.whileStatement() != null) {
             ctx.whileStatement().accept(this);
         }
 
