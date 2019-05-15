@@ -4,6 +4,9 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Vector;
 
+import br.ufpe.cin.if688.minijava.ast.BooleanType;
+import br.ufpe.cin.if688.minijava.ast.IntArrayType;
+import br.ufpe.cin.if688.minijava.ast.IntegerType;
 import br.ufpe.cin.if688.minijava.ast.Type;
 
 public class Method {
@@ -82,6 +85,38 @@ public class Method {
 				return (Variable) (params.elementAt(i));
 
 		return null;
+	}
+
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(">");
+		sb.append(getTypeName(type));
+		sb.append(" ");
+		sb.append(getId());
+		sb.append("()");
+		sb.append("\n");
+		sb.append(">Parameters:\n");
+		for (Variable var : params) {
+			sb.append(var.toString());
+		}
+		sb.append(">Variables:\n");
+		for (Object varKey : vars.keySet()) {
+			Variable var = getVar((String) varKey);
+			sb.append(var.toString());
+		}
+		return sb.toString();
+	}
+
+	private String getTypeName(Type type) {
+		if (type instanceof IntegerType) {
+			return "int";
+		} else if (type instanceof IntArrayType) {
+			return "int[]";
+		} else if (type instanceof BooleanType) {
+			return  "boolean";
+		} else {
+			return type.toString();
+		}
 	}
 
 } // Method

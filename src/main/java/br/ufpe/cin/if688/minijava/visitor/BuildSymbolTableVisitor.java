@@ -56,7 +56,6 @@ public class BuildSymbolTableVisitor implements IVisitor<Void> {
 	// MainClass m;
 	// ClassDeclList cl;
 	public Void visit(Program n) {
-		n.m.accept(this);
 		for (int i = 0; i < n.cl.size(); i++) {
 			n.cl.elementAt(i).accept(this);
 		}
@@ -66,9 +65,6 @@ public class BuildSymbolTableVisitor implements IVisitor<Void> {
 	// Identifier i1,i2;
 	// Statement s;
 	public Void visit(MainClass n) {
-		n.i1.accept(this);
-		n.i2.accept(this);
-		n.s.accept(this);
 		return null;
 	}
 
@@ -76,13 +72,22 @@ public class BuildSymbolTableVisitor implements IVisitor<Void> {
 	// VarDeclList vl;
 	// MethodDeclList ml;
 	public Void visit(ClassDeclSimple n) {
-		n.i.accept(this);
+		String className = n.i.toString();
+
+		symbolTable.addClass(className, null);
+
+		currClass = symbolTable.getClass(className);
+
 		for (int i = 0; i < n.vl.size(); i++) {
 			n.vl.elementAt(i).accept(this);
 		}
+
 		for (int i = 0; i < n.ml.size(); i++) {
 			n.ml.elementAt(i).accept(this);
 		}
+
+		currClass = null;
+
 		return null;
 	}
 
@@ -91,22 +96,34 @@ public class BuildSymbolTableVisitor implements IVisitor<Void> {
 	// VarDeclList vl;
 	// MethodDeclList ml;
 	public Void visit(ClassDeclExtends n) {
-		n.i.accept(this);
-		n.j.accept(this);
+		String className = n.i.toString();
+
+		symbolTable.addClass(className, n.j.toString());
+
+		currClass = symbolTable.getClass(className);
+
 		for (int i = 0; i < n.vl.size(); i++) {
 			n.vl.elementAt(i).accept(this);
 		}
+
 		for (int i = 0; i < n.ml.size(); i++) {
 			n.ml.elementAt(i).accept(this);
 		}
+
+		currClass = null;
+
 		return null;
 	}
 
 	// Type t;
 	// Identifier i;
 	public Void visit(VarDecl n) {
-		n.t.accept(this);
-		n.i.accept(this);
+		if (currMethod != null) {
+			currMethod.addVar(n.i.toString(), n.t);
+		} else {
+			currClass.addVar(n.i.toString(), n.t);
+		}
+
 		return null;
 	}
 
@@ -117,18 +134,22 @@ public class BuildSymbolTableVisitor implements IVisitor<Void> {
 	// StatementList sl;
 	// Exp e;
 	public Void visit(MethodDecl n) {
-		n.t.accept(this);
-		n.i.accept(this);
+		String methodName = n.i.toString();
+
+		currClass.addMethod(methodName, n.t);
+
+		currMethod = currClass.getMethod(methodName);
+
 		for (int i = 0; i < n.fl.size(); i++) {
 			n.fl.elementAt(i).accept(this);
 		}
+
 		for (int i = 0; i < n.vl.size(); i++) {
 			n.vl.elementAt(i).accept(this);
 		}
-		for (int i = 0; i < n.sl.size(); i++) {
-			n.sl.elementAt(i).accept(this);
-		}
-		n.e.accept(this);
+
+		currMethod = null;
+
 		return null;
 	}
 
@@ -137,6 +158,9 @@ public class BuildSymbolTableVisitor implements IVisitor<Void> {
 	public Void visit(Formal n) {
 		n.t.accept(this);
 		n.i.accept(this);
+
+		currMethod.addParam(n.i.toString(), n.t);
+
 		return null;
 	}
 

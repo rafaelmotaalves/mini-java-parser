@@ -5,6 +5,8 @@ import br.ufpe.cin.if688.minijava.ANTLR.MiniJavaParser;
 import br.ufpe.cin.if688.minijava.ast.Program;
 import br.ufpe.cin.if688.minijava.visitor.MiniJavaVisitorImpl;
 import br.ufpe.cin.if688.minijava.visitor.PrettyPrintVisitor;
+import br.ufpe.cin.if688.minijava.visitor.BuildSymbolTableVisitor;
+import br.ufpe.cin.if688.minijava.symboltable.SymbolTable;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -23,6 +25,12 @@ public class TestProgram {
 
         MiniJavaVisitorImpl miniJava = new MiniJavaVisitorImpl();
         Program program = miniJava.visit(parser.goal());
+
+        BuildSymbolTableVisitor buildSymbolTable = new BuildSymbolTableVisitor();
+        buildSymbolTable.visit(program);
+        SymbolTable symbolTable = buildSymbolTable.getSymbolTable();
+
+        System.out.println(symbolTable);
 
         PrettyPrintVisitor printVisitor = new PrettyPrintVisitor();
         printVisitor.visit(program);

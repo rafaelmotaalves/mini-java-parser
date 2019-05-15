@@ -2,11 +2,7 @@ package br.ufpe.cin.if688.minijava.symboltable;
 
 import java.util.Hashtable;
 
-import br.ufpe.cin.if688.minijava.ast.BooleanType;
-import br.ufpe.cin.if688.minijava.ast.IdentifierType;
-import br.ufpe.cin.if688.minijava.ast.IntArrayType;
-import br.ufpe.cin.if688.minijava.ast.IntegerType;
-import br.ufpe.cin.if688.minijava.ast.Type;
+import br.ufpe.cin.if688.minijava.ast.*;
 
 public class SymbolTable {
 
@@ -15,6 +11,17 @@ public class SymbolTable {
 	public SymbolTable() {
 		symbolTable = new Hashtable<Object, Object>();
 	}
+
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		for (Object key: symbolTable.keySet()) {
+			Class _class = (Class) symbolTable.get(key);
+			sb.append(_class.toString());
+		}
+
+		return sb.toString();
+	}
+
 
 	public boolean addClass(String id, String parent) {
 		if (containsClass(id)) {

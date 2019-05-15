@@ -69,6 +69,9 @@ public class Class {
 			return null;
 	}
 
+	public Enumeration getVars() { return globals.keys(); };
+
+
 	public boolean containsVar(String id) {
 		return globals.containsKey(id);
 	}
@@ -79,5 +82,22 @@ public class Class {
 
 	public String parent() {
 		return parent;
+	}
+
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(getId());
+		sb.append("\n");
+		sb.append("Globals\n");
+		for (Object varKey : globals.keySet()) {
+			Variable var = getVar((String) varKey);
+			sb.append(var.toString());
+		}
+		sb.append("Methods\n");
+		for (Object methodKey : methods.keySet()) {
+			Method method = getMethod((String) methodKey);
+			sb.append(method.toString());
+		}
+		return sb.toString();
 	}
 } // Class
