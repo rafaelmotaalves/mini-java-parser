@@ -28,35 +28,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/MiniJavaVisitorImpl.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/symboltable/Method.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="141" column="47" selection-start-line="141" selection-start-column="47" selection-end-line="141" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/BuildSymbolTableVisitor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="68" selection-start-line="68" selection-end-line="68" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/tests/TestProgram.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/symboltable/SymbolTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/MiniJava.g4">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="301" selection-start-line="301" selection-end-line="301" />
+            <state relative-caret-position="-328">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -100,7 +94,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/tests/program.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
+            <state relative-caret-position="4980">
               <caret line="332" column="1" selection-start-line="332" selection-start-column="1" selection-end-line="332" selection-end-column="1" />
             </state>
           </provider>
@@ -174,6 +168,7 @@
         <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/MiniJava.g4" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/tests/program.txt" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/MiniJavaVisitorImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/BuildSymbolTableVisitor.java" />
       </list>
     </option>
   </component>
@@ -197,27 +192,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="minijava" type="58d84e3e:PackageViewProjectNode" />
-              <item name="mini-java-compiler" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="minijava" type="58d84e3e:PackageViewProjectNode" />
-              <item name="mini-java-compiler" type="616d4139:PackageViewModuleNode" />
-              <item name="br.ufpe.cin.if688.minijava.tests" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="minijava" type="58d84e3e:PackageViewProjectNode" />
-              <item name="mini-java-compiler" type="616d4139:PackageViewModuleNode" />
-              <item name="br.ufpe.cin.if688.minijava.visitor" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -362,6 +336,32 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="minijava" type="58d84e3e:PackageViewProjectNode" />
+              <item name="mini-java-compiler" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="minijava" type="58d84e3e:PackageViewProjectNode" />
+              <item name="mini-java-compiler" type="616d4139:PackageViewModuleNode" />
+              <item name="br.ufpe.cin.if688.minijava.symboltable" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="minijava" type="58d84e3e:PackageViewProjectNode" />
+              <item name="mini-java-compiler" type="616d4139:PackageViewModuleNode" />
+              <item name="br.ufpe.cin.if688.minijava.tests" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="minijava" type="58d84e3e:PackageViewProjectNode" />
+              <item name="mini-java-compiler" type="616d4139:PackageViewModuleNode" />
+              <item name="br.ufpe.cin.if688.minijava.visitor" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -441,18 +441,20 @@
       <workItem from="1557271650414" duration="6681000" />
       <workItem from="1557362758444" duration="2432000" />
       <workItem from="1557533242300" duration="2435000" />
+      <workItem from="1557876102796" duration="64000" />
+      <workItem from="1557942519270" duration="537000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12306000" />
+    <option name="totallyTimeSpent" value="12907000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="31" width="1366" height="737" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.79946524" visible="true" weight="0.20845921" />
-      <window_info id="Structure" order="1" sideWeight="0.20053476" side_tool="true" visible="true" weight="0.20845921" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.79571664" visible="true" weight="0.21450152" />
+      <window_info id="Structure" order="1" sideWeight="0.20428336" side_tool="true" visible="true" weight="0.21450152" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -702,13 +704,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gen/br/ufpe/cin/if688/minijava/MiniJavaVisitor.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/symboltable/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/ArrayAssign.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -723,31 +718,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/ClassDeclList.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/MiniJavaVisitorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="15">
+          <caret line="141" column="47" selection-start-line="141" selection-start-column="47" selection-end-line="141" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/ClassDecl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/tests/TestProgram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+        <state relative-caret-position="270">
+          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/MiniJava.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
+        <state relative-caret-position="4125">
           <caret line="301" selection-start-line="301" selection-end-line="301" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/symboltable/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -772,30 +773,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/tests/program.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
+        <state relative-caret-position="4980">
           <caret line="332" column="1" selection-start-line="332" selection-start-column="1" selection-end-line="332" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/tests/TestProgram.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/ClassDeclList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/MiniJavaVisitorImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/ClassDecl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/symboltable/Method.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="141" column="47" selection-start-line="141" selection-start-column="47" selection-end-line="141" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/symboltable/SymbolTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-328">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/BuildSymbolTableVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
     </entry>
