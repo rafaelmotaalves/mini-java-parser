@@ -34,6 +34,7 @@ import br.ufpe.cin.if688.minijava.ast.Times;
 import br.ufpe.cin.if688.minijava.ast.True;
 import br.ufpe.cin.if688.minijava.ast.VarDecl;
 import br.ufpe.cin.if688.minijava.ast.While;
+import br.ufpe.cin.if688.minijava.exceptions.PrintException;
 import br.ufpe.cin.if688.minijava.symboltable.Class;
 import br.ufpe.cin.if688.minijava.symboltable.Method;
 import br.ufpe.cin.if688.minijava.symboltable.SymbolTable;
@@ -74,7 +75,12 @@ public class BuildSymbolTableVisitor implements IVisitor<Void> {
 	public Void visit(ClassDeclSimple n) {
 		String className = n.i.toString();
 
-		symbolTable.addClass(className, null);
+
+		Boolean alreadyDeclared = ! symbolTable.addClass(className, null);
+
+		if (alreadyDeclared) {
+			PrintException.duplicateClass(className);
+		}
 
 		currClass = symbolTable.getClass(className);
 
@@ -98,7 +104,11 @@ public class BuildSymbolTableVisitor implements IVisitor<Void> {
 	public Void visit(ClassDeclExtends n) {
 		String className = n.i.toString();
 
-		symbolTable.addClass(className, n.j.toString());
+		Boolean alreadyDeclared = ! symbolTable.addClass(className, n.j.toString());
+
+		if (alreadyDeclared) {
+			PrintException.duplicateClass(className);
+		}
 
 		currClass = symbolTable.getClass(className);
 
@@ -118,10 +128,15 @@ public class BuildSymbolTableVisitor implements IVisitor<Void> {
 	// Type t;
 	// Identifier i;
 	public Void visit(VarDecl n) {
+		String varName = n.i.toString();
 		if (currMethod != null) {
-			currMethod.addVar(n.i.toString(), n.t);
+			if (!currMethod.addVar(varName, n.t)) {
+				PrintException.duplicateVariable(varName);
+			}
 		} else {
-			currClass.addVar(n.i.toString(), n.t);
+			if (!currClass.addVar(n.i.toString(), n.t)) {
+				PrintException.duplicateVariable(varName);
+			}
 		}
 
 		return null;
@@ -136,7 +151,9 @@ public class BuildSymbolTableVisitor implements IVisitor<Void> {
 	public Void visit(MethodDecl n) {
 		String methodName = n.i.toString();
 
-		currClass.addMethod(methodName, n.t);
+		if (!currClass.addMethod(methodName, n.t)) {
+			PrintException.duplicateMethod(methodName);
+		}
 
 		currMethod = currClass.getMethod(methodName);
 
@@ -156,11 +173,9 @@ public class BuildSymbolTableVisitor implements IVisitor<Void> {
 	// Type t;
 	// Identifier i;
 	public Void visit(Formal n) {
-		n.t.accept(this);
-		n.i.accept(this);
-
-		currMethod.addParam(n.i.toString(), n.t);
-
+		if (!currMethod.addParam(n.i.toString(), n.t)) {
+			PrintException.duplicateParameter(n.i.toString());
+		}
 		return null;
 	}
 

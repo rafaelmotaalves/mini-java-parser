@@ -6,6 +6,7 @@ import br.ufpe.cin.if688.minijava.ast.Program;
 import br.ufpe.cin.if688.minijava.visitor.MiniJavaVisitorImpl;
 import br.ufpe.cin.if688.minijava.visitor.PrettyPrintVisitor;
 import br.ufpe.cin.if688.minijava.visitor.BuildSymbolTableVisitor;
+import br.ufpe.cin.if688.minijava.visitor.TypeCheckVisitor;
 import br.ufpe.cin.if688.minijava.symboltable.SymbolTable;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
@@ -32,7 +33,12 @@ public class TestProgram {
 
         System.out.println(symbolTable);
 
-        PrettyPrintVisitor printVisitor = new PrettyPrintVisitor();
-        printVisitor.visit(program);
+        TypeCheckVisitor typeCheckVisitor = new TypeCheckVisitor(symbolTable);
+
+        try {
+            typeCheckVisitor.visit(program);
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
