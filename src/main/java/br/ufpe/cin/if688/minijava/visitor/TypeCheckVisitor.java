@@ -113,8 +113,6 @@ public class TypeCheckVisitor implements IVisitor<Type>{
 	// Type t;
 	// Identifier i;
 	public Type visit(VarDecl n) {
-		n.t.accept(this);
-		n.i.accept(this);
 		return null;
 	}
 
@@ -155,7 +153,6 @@ public class TypeCheckVisitor implements IVisitor<Type>{
 	// Identifier i;
 	public Type visit(Formal n) {
 		Type formalType = n.t.accept(this);
-		n.i.accept(this);
 
 		return formalType;
 	}
@@ -367,13 +364,25 @@ public class TypeCheckVisitor implements IVisitor<Type>{
 		String className;
 		Exp leftExp = n.e;
 
+		Method method;
 		Type leftType = leftExp.accept(this);
-		className = "";
-		if (leftType instanceof IdentifierType) {
-			className = ((IdentifierType) leftType).s;
-		}
+		if (leftExp instanceof  NewObject) {
+			className = ((NewObject) leftExp).i.toString();
+			if (symbolTable.getClass(className).containsMethod(methodName)) {
+				method = symbolTable.getMethod(methodName, className);
+			} else {
+				PrintException.idNotFound(methodName);
+				method = null;
+			}
+		} else {
+			className = "";
+			if (leftType instanceof IdentifierType) {
+				className = ((IdentifierType) leftType).s;
+			}
 
-		Method method = symbolTable.getMethod(methodName, className);
+
+			method = symbolTable.getMethod(methodName, className);
+		}
 
 		int paramsSize = 0;
 		Enumeration params = method.getParams();
@@ -424,13 +433,21 @@ public class TypeCheckVisitor implements IVisitor<Type>{
 
 	// Exp e;
 	public Type visit(NewArray n) {
-		n.e.accept(this);
-		return new IntArrayType();
+		Type sizeType = n.e.accept(this);
+		if (symbolTable.compareTypes(sizeType, new IntegerType())) {
+			return new IntArrayType();
+		}
+		PrintException.typeMatch(new IntegerType(), sizeType);
+		return null;
 	}
 
 	// Identifier i;
 	public Type visit(NewObject n) {
 		Class objectClass = symbolTable.getClass(n.i.toString());
+
+		if (objectClass == null) {
+			PrintException.idNotFound(n.i.toString());
+		}
 
 		return new IdentifierType(objectClass.getId());
 	}
@@ -450,14 +467,7 @@ public class TypeCheckVisitor implements IVisitor<Type>{
 	// String s;
 	public Type visit(Identifier n) {
 		String varId = n.toString();
-		if (currMethod != null) {
-			return symbolTable.getVarType(currMethod, currClass, varId);
-		} else if (currClass != null){
-			Type a = currClass.getVar(varId).type();
-			return a;
-		}
 
-		PrintException.idNotFound(varId);
-		return null;
+		return symbolTable.getVarType(currMethod, currClass, varId);
 	}
 }

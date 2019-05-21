@@ -3,8 +3,11 @@ package br.ufpe.cin.if688.minijava;
 import br.ufpe.cin.if688.minijava.ANTLR.MiniJavaLexer;
 import br.ufpe.cin.if688.minijava.ANTLR.MiniJavaParser;
 import br.ufpe.cin.if688.minijava.ast.Program;
+import br.ufpe.cin.if688.minijava.symboltable.SymbolTable;
+import br.ufpe.cin.if688.minijava.visitor.BuildSymbolTableVisitor;
 import br.ufpe.cin.if688.minijava.visitor.MiniJavaVisitorImpl;
 import br.ufpe.cin.if688.minijava.visitor.PrettyPrintVisitor;
+import br.ufpe.cin.if688.minijava.visitor.TypeCheckVisitor;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -23,7 +26,19 @@ public class Main {
         MiniJavaVisitorImpl miniJava = new MiniJavaVisitorImpl();
         Program program = miniJava.visit(parser.goal());
 
-        PrettyPrintVisitor printVisitor = new PrettyPrintVisitor();
-        printVisitor.visit(program);
+        BuildSymbolTableVisitor buildSymbolTable = new BuildSymbolTableVisitor();
+        buildSymbolTable.visit(program);
+        SymbolTable symbolTable = buildSymbolTable.getSymbolTable();
+
+        System.out.println(symbolTable);
+
+        TypeCheckVisitor typeCheckVisitor = new TypeCheckVisitor(symbolTable);
+
+        try {
+            typeCheckVisitor.visit(program);
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
     }
 }
