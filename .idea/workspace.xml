@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a94084a-f2f6-4413-a95d-2b1dad88a93d" name="Default Changelist" comment="">
+    <list default="true" id="d49dd946-e24c-4b35-b5f2-f4a232332c3d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mini-java-compiler.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJava.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJava.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaBaseVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/MiniJava.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/MiniJava.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/tests/TestProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/tests/TestProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/MiniJavaVisitorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/MiniJavaVisitorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/TypeCheckVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/TypeCheckVisitor.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,166 +16,18 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/symboltable/Method.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="92" column="18" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/TypeCheckVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="114" column="34" selection-start-line="114" selection-start-column="34" selection-end-line="114" selection-end-column="34" />
-              <folding>
-                <element signature="e#2158#2159#0" expanded="true" />
-                <element signature="e#2181#2182#0" expanded="true" />
-                <element signature="e#3456#3457#0" expanded="true" />
-                <element signature="e#4333#4334#0" expanded="true" />
-                <element signature="e#4364#4365#0" expanded="true" />
-                <element signature="e#4401#4402#0" expanded="true" />
-                <element signature="e#4432#4433#0" expanded="true" />
-                <element signature="e#4469#4470#0" expanded="true" />
-                <element signature="e#4500#4501#0" expanded="true" />
-                <element signature="e#4554#4555#0" expanded="true" />
-                <element signature="e#4591#4592#0" expanded="true" />
-                <element signature="e#10408#10409#0" expanded="true" />
-                <element signature="e#10439#10440#0" expanded="true" />
-                <element signature="e#10469#10470#0" expanded="true" />
-                <element signature="e#10500#10501#0" expanded="true" />
-                <element signature="e#10531#10532#0" expanded="true" />
-                <element signature="e#10562#10563#0" expanded="true" />
-                <element signature="e#10615#10616#0" expanded="true" />
-                <element signature="e#10661#10662#0" expanded="true" />
-                <element signature="e#10691#10692#0" expanded="true" />
-                <element signature="e#10721#10722#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/BuildSymbolTableVisitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="172" column="55" lean-forward="true" selection-start-line="172" selection-start-column="55" selection-end-line="172" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/tests/TestProgram.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="42" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/MiniJava.g4">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/IdentifierExp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="39" selection-start-column="39" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/IVisitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/symboltable/SymbolTable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="139" column="32" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/tests/program.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+            <state relative-caret-position="360">
+              <caret line="167" column="52" lean-forward="true" selection-start-line="167" selection-start-column="52" selection-end-line="167" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>TypeC</find>
-      <find>methodDe</find>
-      <find>ParameterList</find>
-      <find>Assignment</find>
-      <find>Not</find>
-      <find>visitS</find>
-      <find>MainClass</find>
-      <find>MethodDeclaration</find>
-      <find>Statement</find>
-      <find>assignment</find>
-      <find>VarDeclaration</find>
-      <find>VarDecl</find>
-      <find>parent</find>
-      <find>getMethod</find>
-      <find>getVar</find>
-      <find>meth</find>
-      <find>type</find>
-      <find>Syste</find>
-      <find>Ide</find>
-      <find>Identifer</find>
-      <find>Variable</find>
-      <find>root</find>
-      <find>This</find>
-      <find>NewObe</find>
-      <find>Identifier</find>
-      <find>Ob</find>
-      <find>Call</find>
-      <find>NewObject</find>
-      <find>ntb</find>
-      <find>getClass</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-    </replaceStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/exceptions</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -190,249 +35,47 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gen/MiniJavaLexer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaLexer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaBaseVisitor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaBaseListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaVisitor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/ASTVisitor.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/MiniJava.g4" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/MiniJavaVisitorImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/symboltable/Variable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/symboltable/Class.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/symboltable/Method.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/exceptions/PrintException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/BuildSymbolTableVisitor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/symboltable/SymbolTable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/tests/TestProgram.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/tests/program.txt" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/TypeCheckVisitor.java" />
       </list>
     </option>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="473" />
-    <option name="y" value="83" />
+    <option name="x" value="293" />
+    <option name="y" value="53" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="PackagesPane" proportions="" version="1">
-      <flattenPackages PackagesPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="minijava" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mini-java-parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="minijava" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mini-java-parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="gen" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="minijava" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mini-java-parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="gen" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="br" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="minijava" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mini-java-parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="gen" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="br" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="ufpe" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="minijava" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mini-java-parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="gen" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="br" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="ufpe" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="cin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="minijava" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mini-java-parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="gen" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="br" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="ufpe" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="cin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="if688" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="minijava" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mini-java-parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="gen" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="br" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="ufpe" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="cin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="if688" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="minijava" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="minijava" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mini-java-parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="minijava" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mini-java-parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="minijava" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mini-java-parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="minijava" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mini-java-parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="br.ufpe.cin.if688.minijava" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="minijava" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mini-java-parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="br.ufpe.cin.if688.minijava.ANTLR" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="minijava" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mini-java-parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="br.ufpe.cin.if688.minijava.ast" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="minijava" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mini-java-parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="br.ufpe.cin.if688.minijava.exceptions" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="minijava" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mini-java-parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="br.ufpe.cin.if688.minijava.symboltable" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="minijava" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/mini-java-parser" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="br.ufpe.cin.if688.minijava.tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="PackagesPane">
         <subPane>
           <expand>
             <path>
               <item name="minijava" type="58d84e3e:PackageViewProjectNode" />
-              <item name="mini-java-compiler" type="616d4139:PackageViewModuleNode" />
+              <item name="minijava" type="616d4139:PackageViewModuleNode" />
             </path>
             <path>
               <item name="minijava" type="58d84e3e:PackageViewProjectNode" />
-              <item name="mini-java-compiler" type="616d4139:PackageViewModuleNode" />
+              <item name="minijava" type="616d4139:PackageViewModuleNode" />
               <item name="br.ufpe.cin.if688.minijava" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="minijava" type="58d84e3e:PackageViewProjectNode" />
-              <item name="mini-java-compiler" type="616d4139:PackageViewModuleNode" />
-              <item name="br.ufpe.cin.if688.minijava.exceptions" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="minijava" type="58d84e3e:PackageViewProjectNode" />
-              <item name="mini-java-compiler" type="616d4139:PackageViewModuleNode" />
-              <item name="br.ufpe.cin.if688.minijava.symboltable" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="minijava" type="58d84e3e:PackageViewProjectNode" />
-              <item name="mini-java-compiler" type="616d4139:PackageViewModuleNode" />
-              <item name="br.ufpe.cin.if688.minijava.tests" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="minijava" type="58d84e3e:PackageViewProjectNode" />
-              <item name="mini-java-compiler" type="616d4139:PackageViewModuleNode" />
-              <item name="br.ufpe.cin.if688.minijava.visitor" type="1f31426a:PackageElementNode" />
+              <item name="minijava" type="616d4139:PackageViewModuleNode" />
+              <item name="br.ufpe.cin.if688.minijava" type="1f31426a:PackageElementNode" />
+              <item name="visitor" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="minijava" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mini-java-parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="minijava" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mini-java-parser" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="minijava" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mini-java-parser" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
-  </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557499765327" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/exceptions" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/exceptions" />
-      <recent name="$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="br.ufpe.cin.if688.minijava.visitor" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -446,505 +89,55 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestProgram">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.ufpe.cin.if688.minijava.Main" />
-      <module name="mini-java-compiler" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.ufpe.cin.if688.minijava.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.ufpe.cin.if688.minijava.tests.TestProgram" />
-      <module name="mini-java-compiler" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.ufpe.cin.if688.minijava.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.TestProgram" />
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3a94084a-f2f6-4413-a95d-2b1dad88a93d" name="Default Changelist" comment="" />
-      <created>1557235393196</created>
+      <changelist id="d49dd946-e24c-4b35-b5f2-f4a232332c3d" name="Default Changelist" comment="" />
+      <created>1558436920350</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1557235393196</updated>
-      <workItem from="1557270860950" duration="758000" />
-      <workItem from="1557271650414" duration="6681000" />
-      <workItem from="1557362758444" duration="2432000" />
-      <workItem from="1557533242300" duration="2435000" />
-      <workItem from="1557876102796" duration="64000" />
-      <workItem from="1557942519270" duration="4897000" />
-      <workItem from="1558036949896" duration="5792000" />
-      <workItem from="1558050182560" duration="1599000" />
-      <workItem from="1558053779762" duration="483000" />
-      <workItem from="1558399363405" duration="2967000" />
+      <updated>1558436920350</updated>
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28108000" />
-  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="31" width="1366" height="737" extended-state="6" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.79571664" visible="true" weight="0.2265861" />
-      <window_info id="Structure" order="1" sideWeight="0.20428336" side_tool="true" weight="0.21450152" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18705036" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38385502" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32784185" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Tool Output" order="10" weight="0.3261944" />
-      <window_info anchor="bottom" id="ANTLR Preview" order="11" weight="0.47611204" />
-      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32784185" />
-      <window_info anchor="bottom" id="Inspection Results" order="14" weight="0.32936078" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.79571664" visible="true" weight="0.2205438" />
-      <window_info id="Structure" order="1" sideWeight="0.20428336" side_tool="true" weight="0.21450152" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.38385502" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32784185" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Tool Output" order="10" weight="0.3261944" />
-      <window_info anchor="bottom" id="ANTLR Preview" order="11" weight="0.47611204" />
-      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32784185" />
-      <window_info anchor="bottom" id="Inspection Results" order="14" weight="0.32936078" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/Plus.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/ASTVisitor.java" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaLexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="41" selection-start-column="41" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJava.tokens">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaBaseVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaBaseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/StatementList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/Statement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/Print.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/False.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/Exp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/And.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/Program.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/ClassDeclSimple.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/Identifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/MethodDeclList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/Formal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/ClassDeclExtends.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="39" selection-start-column="39" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJavaParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen/br/ufpe/cin/if688/minijava/MiniJavaVisitor.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/ArrayAssign.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ANTLR/MiniJava.interp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/Call.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/ClassDeclList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/ClassDecl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/MainClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/MethodDecl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/Type.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/IntegerType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/NewArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" selection-start-column="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/NewObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="39" lean-forward="true" selection-start-column="39" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/MiniJavaVisitorImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="451" column="22" selection-start-line="451" selection-start-column="22" selection-end-line="451" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/symboltable/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/PrettyPrintVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="98" selection-start-line="98" selection-end-line="99" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/exceptions/PrintException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-310">
-          <caret line="10" column="56" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/symboltable/Variable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="29" selection-start-line="29" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/symboltable/Method.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="92" column="18" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/BuildSymbolTableVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="172" column="55" lean-forward="true" selection-start-line="172" selection-start-column="55" selection-end-line="172" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/MiniJava.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/ast/IdentifierExp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="39" selection-start-column="39" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/IVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/tests/TestProgram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="42" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/tests/program.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/symboltable/SymbolTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="139" column="32" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufpe/cin/if688/minijava/visitor/TypeCheckVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="114" column="34" selection-start-line="114" selection-start-column="34" selection-end-line="114" selection-end-column="34" />
-          <folding>
-            <element signature="e#2158#2159#0" expanded="true" />
-            <element signature="e#2181#2182#0" expanded="true" />
-            <element signature="e#3456#3457#0" expanded="true" />
-            <element signature="e#4333#4334#0" expanded="true" />
-            <element signature="e#4364#4365#0" expanded="true" />
-            <element signature="e#4401#4402#0" expanded="true" />
-            <element signature="e#4432#4433#0" expanded="true" />
-            <element signature="e#4469#4470#0" expanded="true" />
-            <element signature="e#4500#4501#0" expanded="true" />
-            <element signature="e#4554#4555#0" expanded="true" />
-            <element signature="e#4591#4592#0" expanded="true" />
-            <element signature="e#10408#10409#0" expanded="true" />
-            <element signature="e#10439#10440#0" expanded="true" />
-            <element signature="e#10469#10470#0" expanded="true" />
-            <element signature="e#10500#10501#0" expanded="true" />
-            <element signature="e#10531#10532#0" expanded="true" />
-            <element signature="e#10562#10563#0" expanded="true" />
-            <element signature="e#10615#10616#0" expanded="true" />
-            <element signature="e#10661#10662#0" expanded="true" />
-            <element signature="e#10691#10692#0" expanded="true" />
-            <element signature="e#10721#10722#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="360">
+          <caret line="167" column="52" lean-forward="true" selection-start-line="167" selection-start-column="52" selection-end-line="167" selection-end-column="52" />
         </state>
       </provider>
     </entry>

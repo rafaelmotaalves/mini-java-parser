@@ -113,6 +113,16 @@ public class TypeCheckVisitor implements IVisitor<Type>{
 	// Type t;
 	// Identifier i;
 	public Type visit(VarDecl n) {
+		Type type = n.t;
+
+		if (type instanceof  IdentifierType) {
+			String className = ((IdentifierType) type).s;
+
+			if (symbolTable.getClass(className) == null) {
+				PrintException.idNotFound(className);
+			}
+		}
+
 		return null;
 	}
 
@@ -152,9 +162,19 @@ public class TypeCheckVisitor implements IVisitor<Type>{
 	// Type t;
 	// Identifier i;
 	public Type visit(Formal n) {
-		Type formalType = n.t.accept(this);
+		Type formalType = n.t;
 
-		return formalType;
+
+		if (formalType instanceof  IdentifierType) {
+			String className = ((IdentifierType) formalType).s;
+
+			if (symbolTable.getClass(className) == null) {
+				PrintException.idNotFound(className);
+			}
+		}
+
+
+		return n.t;
 	}
 
 	public Type visit(IntArrayType n) {
