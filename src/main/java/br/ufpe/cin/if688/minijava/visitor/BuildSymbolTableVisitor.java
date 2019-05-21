@@ -57,6 +57,7 @@ public class BuildSymbolTableVisitor implements IVisitor<Void> {
 	// MainClass m;
 	// ClassDeclList cl;
 	public Void visit(Program n) {
+		n.m.accept(this);
 		for (int i = 0; i < n.cl.size(); i++) {
 			n.cl.elementAt(i).accept(this);
 		}
@@ -66,6 +67,23 @@ public class BuildSymbolTableVisitor implements IVisitor<Void> {
 	// Identifier i1,i2;
 	// Statement s;
 	public Void visit(MainClass n) {
+		String className = n.i1.toString();
+
+		if (!symbolTable.addClass(className, null)) {
+			PrintException.duplicateClass(className);
+		}
+
+		currClass = symbolTable.getClass(className);
+
+		currClass.addMethod("main", null);
+
+		currMethod = currClass.getMethod("main");
+
+		currMethod.addParam( n.i2.toString(), null);
+
+		currMethod = null;
+		currClass = null;
+
 		return null;
 	}
 

@@ -14,11 +14,14 @@ public class SymbolTable {
 
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
+		sb.append("SymbolTable [\n");
 		for (Object key: symbolTable.keySet()) {
 			Class _class = (Class) symbolTable.get(key);
-			sb.append(_class.toString());
+			sb.append("    Class");
+			sb.append(_class.getId());
+			sb.append("\n");
 		}
-
+		sb.append("]");
 		return sb.toString();
 	}
 

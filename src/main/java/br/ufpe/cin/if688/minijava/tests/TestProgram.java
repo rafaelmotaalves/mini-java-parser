@@ -38,6 +38,7 @@ public class TestProgram {
         try {
             typeCheckVisitor.visit(program);
         } catch (RuntimeException e) {
+            e.printStackTrace();
             System.out.println(e.getMessage());
         }
     }
